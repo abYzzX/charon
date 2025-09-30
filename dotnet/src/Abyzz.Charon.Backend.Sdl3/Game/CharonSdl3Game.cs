@@ -81,8 +81,6 @@ internal class CharonSdl3Game : ICharonGame, IRendererAccessor, IWindowAccessor,
             {
                 var frameEnd = SDL3.SDL_GetTicks();
                 var frameDuration = frameEnd - frameStart;
-                InitLogger.LogInformation("Frame duration: {FrameDuration} ms", frameDuration);
-
                 if (Settings.Value.LimitFps && frameDuration < targetFrameTime)
                 {
                     SDL3.SDL_Delay((uint)(targetFrameTime - frameDuration));

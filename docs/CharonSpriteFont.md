@@ -12,15 +12,11 @@ This format is used by the `CharonSpriteFont` class. It is a simple binary forma
 | 3   | 2    | Version          |
 | 5   | 2    | Font size        |
 | 7   | 2    | Font line height |
-| 9   | 2    | Font width       |
-| 11  | 2    | Font height      |
-| 13  | 2    | Font x offset    |
-| 15  | 2    | Font y offset    |
-| 17  | 2    | Font x advance   |
-| 19  | 8    | Texture Size     |
-| 27  | 2    | Character Count  |
-| 29  | n    | Character Data   |
-| n   | -    | Texture          |
+| 9   | 8    | Texture Size     |
+| 17  | 2    | Character Count  |
+| 19  |      | Character Data   |
+|     |      | Texture          |
+|     |      | Extended Data    |
 
 ### Character Data
 
@@ -35,3 +31,16 @@ This format is used by the `CharonSpriteFont` class. It is a simple binary forma
 | 12  | 4    | X-Texture position |
 | 16  | 4    | Y-Texture position |
 
+### Extended Data
+
+Extended data is a list of a name-value string list. 
+Each string is terminated by a null character.
+
+Known names:
+- FontName
+- FontFamily
+- FontStyle
+- FontVersion
+- Author
+- Copyright
+- License
