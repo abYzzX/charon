@@ -1,0 +1,51 @@
+<Project>
+  <PropertyGroup>
+    <MsVersion>9.0.8</MsVersion>
+    <AbyzzVersion>0.0.8</AbyzzVersion>
+    <PpySdlVersion>2025.828.0</PpySdlVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Microsoft.Extensions -->
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.Extensions.Options.Abstractions" Version="$(MsVersion)"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Autofac -->
+    <PackageVersion Include="Autofac" Version="8.3.0"/>
+    <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="9.0.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Serilog -->
+    <PackageVersion Include="Serilog" Version="4.3.0"/>
+    <PackageVersion Include="Serilog.Extensions.Logging" Version="9.0.2"/>
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0"/>
+    <PackageVersion Include="Serilog.Settings.Configuration" Version="9.0.0"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageVersion Include="Abyzz.Extensions" Version="$(AbyzzVersion)" />
+    <PackageVersion Include="Abyzz.Extensions.DependecyInjection" Version="$(AbyzzVersion)" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageVersion Include="ppy.SDL3-CS" Version="$(PpySdlVersion)"/>
+    <PackageVersion Include="ppy.SDL3_image-CS" Version="$(PpySdlVersion)"/>
+    <PackageVersion Include="ppy.SDL3_ttf-CS" Version="$(PpySdlVersion)"/>
+    <PackageVersion Include="ppy.SDL3_mixer-CS" Version="$(PpySdlVersion)"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!-- Misc -->
+    <PackageVersion Include="NetEscapades.Configuration.Yaml" Version="3.1.0"/>
+  </ItemGroup>
+</Project>
+

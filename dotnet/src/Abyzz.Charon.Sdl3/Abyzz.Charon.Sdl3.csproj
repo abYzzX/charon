@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Sdl3</PackageId>
+    <RootNamespace>Charon.Sdl3</RootNamespace>
+    <ProjectGuid>4e3d2f54-21b2-43eb-8732-9dbcac3ab526</ProjectGuid>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Abyzz.Charon.Modularity\Abyzz.Charon.Modularity.csproj" />
+      <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ppy.SDL3-CS"/>
+    <PackageReference Include="ppy.SDL3_image-CS"/>
+    <PackageReference Include="ppy.SDL3_ttf-CS"/>
+  </ItemGroup>  
+  
+</Project>

@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{439ADF2C-0BE3-411E-B0E2-7D848E78651B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon", "src\Abyzz.Charon\Abyzz.Charon.csproj", "{C14592E8-D626-4A03-BD90-50801B1D43FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Shared", "src\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj", "{165E6C00-9739-46F1-BE3E-28A747A62085}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_sln_", "_sln_", "{9FC073E3-60F6-441D-B21A-2DEC34E7DA39}"
+	ProjectSection(SolutionItems) = preProject
+		common.props = common.props
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_doc_", "_doc_", "{9FA71E2A-12E3-4D83-A23D-F08CC9E3CF12}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\README.md = ..\README.md
+		..\LICENSE.md = ..\LICENSE.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{D00D975B-1985-4862-AC73-027E5513C2E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Demo", "app\Abyzz.Charon.Demo\Abyzz.Charon.Demo.csproj", "{AD4A9BFE-59F9-41D2-87A4-377708568EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Modularity", "src\Abyzz.Charon.Modularity\Abyzz.Charon.Modularity.csproj", "{6F433562-EFFC-4499-BF1A-44C9995CE7C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Sdl3", "src\Abyzz.Charon.Sdl3\Abyzz.Charon.Sdl3.csproj", "{1D744AAA-AF43-4709-9792-0356DAF9E404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Font", "src\Abyzz.Charon.Font\Abyzz.Charon.Font.csproj", "{54E2C191-0101-4EFF-884C-3462F518A8C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Font.Bdf", "src\Abyzz.Charon.Font.Bdf\Abyzz.Charon.Font.Bdf.csproj", "{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Debug", "src\Abyzz.Charon.Debug\Abyzz.Charon.Debug.csproj", "{5D64452B-B16F-4083-868C-D090BDE3F363}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C14592E8-D626-4A03-BD90-50801B1D43FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14592E8-D626-4A03-BD90-50801B1D43FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14592E8-D626-4A03-BD90-50801B1D43FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14592E8-D626-4A03-BD90-50801B1D43FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165E6C00-9739-46F1-BE3E-28A747A62085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165E6C00-9739-46F1-BE3E-28A747A62085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165E6C00-9739-46F1-BE3E-28A747A62085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165E6C00-9739-46F1-BE3E-28A747A62085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4A9BFE-59F9-41D2-87A4-377708568EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4A9BFE-59F9-41D2-87A4-377708568EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4A9BFE-59F9-41D2-87A4-377708568EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4A9BFE-59F9-41D2-87A4-377708568EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F433562-EFFC-4499-BF1A-44C9995CE7C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F433562-EFFC-4499-BF1A-44C9995CE7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F433562-EFFC-4499-BF1A-44C9995CE7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F433562-EFFC-4499-BF1A-44C9995CE7C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D744AAA-AF43-4709-9792-0356DAF9E404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D744AAA-AF43-4709-9792-0356DAF9E404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D744AAA-AF43-4709-9792-0356DAF9E404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D744AAA-AF43-4709-9792-0356DAF9E404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E2C191-0101-4EFF-884C-3462F518A8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E2C191-0101-4EFF-884C-3462F518A8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E2C191-0101-4EFF-884C-3462F518A8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E2C191-0101-4EFF-884C-3462F518A8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D64452B-B16F-4083-868C-D090BDE3F363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D64452B-B16F-4083-868C-D090BDE3F363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D64452B-B16F-4083-868C-D090BDE3F363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D64452B-B16F-4083-868C-D090BDE3F363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C14592E8-D626-4A03-BD90-50801B1D43FD} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{165E6C00-9739-46F1-BE3E-28A747A62085} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{AD4A9BFE-59F9-41D2-87A4-377708568EBC} = {D00D975B-1985-4862-AC73-027E5513C2E3}
+		{6F433562-EFFC-4499-BF1A-44C9995CE7C0} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{1D744AAA-AF43-4709-9792-0356DAF9E404} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{54E2C191-0101-4EFF-884C-3462F518A8C8} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{8A863477-8FC9-4E6A-B74E-7E5C7BF5D974} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+		{5D64452B-B16F-4083-868C-D090BDE3F363} = {439ADF2C-0BE3-411E-B0E2-7D848E78651B}
+	EndGlobalSection
+EndGlobal

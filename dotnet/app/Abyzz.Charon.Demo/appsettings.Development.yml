@@ -1,0 +1,22 @@
+Serilog:
+  Using:
+    - Serilog.Sinks.Console
+  Enrich:
+    - WithThreadId
+    - WithThreadName
+    - WithMachineName
+    - WithEnvironmentName
+    - WithEnvironmentUserName
+    - FromLogContext
+  MinimumLevel:
+    Default: Verbose
+    Override:
+      System: Warning
+      Microsoft: Information
+      Charon: Debug
+      Charon.SDL3: Warning
+      Charon.Font.BdfReader.BdfLoader: Debug
+  WriteTo:
+    - Name: Console
+      Args:
+        outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} <{SourceContext}>{NewLine}{Exception}"

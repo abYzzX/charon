@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Modularity</PackageId>
+    <RootNamespace>Charon</RootNamespace>
+    <ProjectGuid>b6da6e9a-9cf8-4b06-9348-b4bcf60b8e60</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+  </ItemGroup>
+  
+</Project>

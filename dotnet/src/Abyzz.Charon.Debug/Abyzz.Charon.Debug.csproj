@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Debug</PackageId>
+    <RootNamespace>Charon.Debugging</RootNamespace>
+    <ProjectGuid>3444ce77-cba8-4e5e-934f-962781576a03</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abyzz.Extensions"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Font\Abyzz.Charon.Font.csproj" />
+    <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+  </ItemGroup>
+</Project>

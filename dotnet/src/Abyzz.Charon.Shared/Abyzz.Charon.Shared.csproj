@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Shared</PackageId>
+    <RootNamespace>Charon</RootNamespace>
+    <ProjectGuid>31b0cebc-f349-4372-9fe1-2003b6741190</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abyzz.Extensions"/>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"/>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions"/>
+    <PackageReference Include="Microsoft.Extensions.Options"/>    
+  </ItemGroup>
+</Project>
