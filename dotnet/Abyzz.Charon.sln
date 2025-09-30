@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_doc_", "_doc_", "{9FA71E2A
 		..\CHANGELOG.md = ..\CHANGELOG.md
 		..\README.md = ..\README.md
 		..\LICENSE.md = ..\LICENSE.md
+		..\docs\CharonSpriteFont.md = ..\docs\CharonSpriteFont.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{D00D975B-1985-4862-AC73-027E5513C2E3}"
