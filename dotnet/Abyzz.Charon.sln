@@ -38,9 +38,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Debug", "src\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Extensions", "src\Abyzz.Extensions\Abyzz.Extensions.csproj", "{BD606A5A-43C8-460F-8005-5423E9AF39FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Backend.Sdl3", "src\Abyzz.Charon.Backend.SDL3\Abyzz.Charon.Backend.Sdl3.csproj", "{4E3D2F54-21B2-43EB-8732-9DBCAC3AB526}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Backend.Sdl3", "src\Abyzz.Charon.Backend.Sdl3\Abyzz.Charon.Backend.Sdl3.csproj", "{4E3D2F54-21B2-43EB-8732-9DBCAC3AB526}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Backend.SDL3.Image", "src\Abyzz.Charon.Backend.SDL3.Image\Abyzz.Charon.Backend.SDL3.Image.csproj", "{6E088A35-1844-4EDF-895E-6BFD0E5B6557}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzz.Charon.Backend.Sdl3.Image", "src\Abyzz.Charon.Backend.Sdl3.Image\Abyzz.Charon.Backend.Sdl3.Image.csproj", "{6E088A35-1844-4EDF-895E-6BFD0E5B6557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
