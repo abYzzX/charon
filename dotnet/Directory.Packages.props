@@ -1,7 +1,6 @@
 <Project>
   <PropertyGroup>
     <MsVersion>9.0.8</MsVersion>
-    <AbyzzVersion>0.0.8</AbyzzVersion>
     <PpySdlVersion>2025.828.0</PpySdlVersion>
   </PropertyGroup>
 
@@ -30,11 +29,6 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0"/>
     <PackageVersion Include="Serilog.Settings.Configuration" Version="9.0.0"/>
   </ItemGroup>
-  
-<!--  <ItemGroup>-->
-<!--    <PackageVersion Include="Abyzz.Extensions" Version="$(AbyzzVersion)" />-->
-<!--    <PackageVersion Include="Abyzz.Extensions.DependecyInjection" Version="$(AbyzzVersion)" />-->
-<!--  </ItemGroup>-->
   
   <ItemGroup>
     <PackageVersion Include="ppy.SDL3-CS" Version="$(PpySdlVersion)"/>

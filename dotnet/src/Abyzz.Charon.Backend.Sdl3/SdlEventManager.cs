@@ -9,7 +9,7 @@ namespace Charon.Sdl3;
     typeof(ISdlEventManager),
     typeof(IGlobalService)
 )]
-internal class SdlEventManager : ISdlEventManager, IGlobalService, ISingletonDependency
+public class SdlEventManager : ISdlEventManager, IGlobalService, ISingletonDependency
 {
     private readonly IDictionary<SDL_EventType, HashSet<ISdlEventHandler>> _eventHandlers =
         new Dictionary<SDL_EventType, HashSet<ISdlEventHandler>>();

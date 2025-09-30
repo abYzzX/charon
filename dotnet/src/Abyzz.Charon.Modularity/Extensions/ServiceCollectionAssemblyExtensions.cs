@@ -76,17 +76,18 @@ public static class ServiceCollectionAssemblyExtensions
     private static void AddSingleton(IServiceCollection services, Type type)
     {
         InitLogger.LogDebug("  Registering singleton service: {Type}", type.FullName);
+        foreach (var attribute in type.GetCustomAttributes<ReplaceServiceAttribute>())
+        {
+            InitLogger.LogDebug("    Removing existing transient service: {Type}", type.FullName);
+            services.RemoveAll(x => x.ServiceType == attribute.ServiceType &&
+                                    (!attribute.OnlySameDependency ||
+                                     x.Lifetime == ServiceLifetime.Singleton));
+        }
+
         services.AddSingleton(type);
+
         foreach (var exposedType in GetExposedTypes(type))
         {
-            if (type.GetCustomAttribute<ReplaceServiceAttribute>() is { } replaceServiceAttribute)
-            {
-                InitLogger.LogDebug("    Removing existing singleton service: {Type}", type.FullName);
-                services.RemoveAll(x => x.ServiceType == exposedType &&
-                                        (!replaceServiceAttribute.OnlySameDependency ||
-                                         x.Lifetime == ServiceLifetime.Singleton));
-            }
-
             InitLogger.LogDebug("    Exposed: {Type}", exposedType.FullName);
             services.AddSingleton(exposedType, sp => sp.GetRequiredService(type));
         }
@@ -95,17 +96,17 @@ public static class ServiceCollectionAssemblyExtensions
     private static void AddTransient(IServiceCollection services, Type type)
     {
         InitLogger.LogDebug("  Registering transient service: {Type}", type.FullName);
+        foreach (var attribute in type.GetCustomAttributes<ReplaceServiceAttribute>())
+        {
+            InitLogger.LogDebug("    Removing existing transient service: {Type}", type.FullName);
+            services.RemoveAll(x => x.ServiceType == attribute.ServiceType &&
+                                    (!attribute.OnlySameDependency ||
+                                     x.Lifetime == ServiceLifetime.Transient));
+        }
+
         services.AddTransient(type);
         foreach (var exposedType in GetExposedTypes(type))
         {
-            if (type.GetCustomAttribute<ReplaceServiceAttribute>() is { } replaceServiceAttribute)
-            {
-                InitLogger.LogDebug("    Removing existing transient service: {Type}", type.FullName);
-                services.RemoveAll(x => x.ServiceType == exposedType &&
-                                        (!replaceServiceAttribute.OnlySameDependency ||
-                                         x.Lifetime == ServiceLifetime.Transient));
-            }
-
             InitLogger.LogDebug("    Exposed: {Type}", exposedType.FullName);
             services.AddTransient(exposedType, type);
         }
@@ -114,17 +115,16 @@ public static class ServiceCollectionAssemblyExtensions
     private static void AddScoped(IServiceCollection services, Type type)
     {
         InitLogger.LogDebug("  Registering scoped service: {Type}", type.FullName);
+        foreach (var attribute in type.GetCustomAttributes<ReplaceServiceAttribute>())
+        {
+            InitLogger.LogDebug("    Removing existing transient service: {Type}", type.FullName);
+            services.RemoveAll(x => x.ServiceType == attribute.ServiceType &&
+                                    (!attribute.OnlySameDependency ||
+                                     x.Lifetime == ServiceLifetime.Scoped));
+        }
         services.AddScoped(type);
         foreach (var exposedType in GetExposedTypes(type))
         {
-            if (type.GetCustomAttribute<ReplaceServiceAttribute>() is { } replaceServiceAttribute)
-            {
-                InitLogger.LogDebug("    Removing existing scoped service: {Type}", type.FullName);
-                services.RemoveAll(x => x.ServiceType == exposedType &&
-                                        (!replaceServiceAttribute.OnlySameDependency ||
-                                         x.Lifetime == ServiceLifetime.Scoped));
-            }
-
             InitLogger.LogDebug("    Exposed: {Type}", exposedType.FullName);
             services.AddScoped(exposedType, type);
         }
