@@ -13,27 +13,24 @@ public class DebugOverlay : IDebugOverlay, IGlobalService, ISingletonDependency
     public int Order { get; } = int.MaxValue;
     public IDebugOverlay AddElement(IDebugOverlayElement element)
     {
-        throw new NotImplementedException();
+        return this;
     }
 
     public IDebugOverlay AddElement<TElement>() where TElement : class, IDebugOverlayElement
     {
-        throw new NotImplementedException();
+        return this;
     }
 
     public void Initialize()
     {
-        throw new NotImplementedException();
     }
 
     public void Update(IGameTime gameTime)
     {
-        throw new NotImplementedException();
     }
 
     public void Render()
     {
-        throw new NotImplementedException();
     }
 
     public IDebugOverlay AddText(string text)
