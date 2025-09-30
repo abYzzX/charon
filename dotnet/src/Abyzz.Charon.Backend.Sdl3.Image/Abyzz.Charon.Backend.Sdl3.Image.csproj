@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abyzz.Charon.Backend.SDL3\Abyzz.Charon.Backend.Sdl3.csproj" />
+    <ProjectReference Include="..\Abyzz.Charon.Backend.Sdl3\Abyzz.Charon.Backend.Sdl3.csproj" />
   </ItemGroup>
 
   <ItemGroup>
