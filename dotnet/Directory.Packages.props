@@ -31,10 +31,10 @@
     <PackageVersion Include="Serilog.Settings.Configuration" Version="9.0.0"/>
   </ItemGroup>
   
-  <ItemGroup>
-    <PackageVersion Include="Abyzz.Extensions" Version="$(AbyzzVersion)" />
-    <PackageVersion Include="Abyzz.Extensions.DependecyInjection" Version="$(AbyzzVersion)" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <PackageVersion Include="Abyzz.Extensions" Version="$(AbyzzVersion)" />-->
+<!--    <PackageVersion Include="Abyzz.Extensions.DependecyInjection" Version="$(AbyzzVersion)" />-->
+<!--  </ItemGroup>-->
   
   <ItemGroup>
     <PackageVersion Include="ppy.SDL3-CS" Version="$(PpySdlVersion)"/>
@@ -46,6 +46,7 @@
   <ItemGroup>
     <!-- Misc -->
     <PackageVersion Include="NetEscapades.Configuration.Yaml" Version="3.1.0"/>
+    <PackageVersion Include="Nito.AsyncEx" Version="5.1.2"/>
   </ItemGroup>
 </Project>
 

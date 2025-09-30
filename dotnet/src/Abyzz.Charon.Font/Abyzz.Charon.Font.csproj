@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abyzz.Extensions"/>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
   </ItemGroup>
 

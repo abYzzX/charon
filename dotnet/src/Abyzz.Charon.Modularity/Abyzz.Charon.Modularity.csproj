@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+    <ProjectReference Include="..\Abyzz.Extensions\Abyzz.Extensions.csproj" />
   </ItemGroup>
   
 </Project>

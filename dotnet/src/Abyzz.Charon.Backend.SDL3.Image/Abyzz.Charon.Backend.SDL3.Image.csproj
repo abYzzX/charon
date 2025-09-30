@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.SDL3.Image</PackageId>
+    <RootNamespace>Charon.SDL3</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.SDL3\Abyzz.Charon.SDL3.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ppy.SDL3-CS"/>
+    <PackageReference Include="ppy.SDL3_image-CS"/>    
+  </ItemGroup>
+  
+</Project>
