@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Font.Bmf</PackageId>
+    <RootNamespace>Charon.Font</RootNamespace>
+    <ProjectGuid>7968300d-facc-4d7a-b27c-b85d8541e772</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Font\Abyzz.Charon.Font.csproj" />
+    <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

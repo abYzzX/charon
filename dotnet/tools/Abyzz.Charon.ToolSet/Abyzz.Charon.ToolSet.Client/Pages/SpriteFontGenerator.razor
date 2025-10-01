@@ -1,86 +1,12 @@
 @page "/spritefont"
 @using Microsoft.AspNetCore.Components.Forms
 
-<MudContainer Class="pa-4">
-    <MudText Typo="Typo.h4" GutterBottom>Sprite Font Generator</MudText>
-    <MudText Typo="Typo.body1" Class="mb-4">
-        Lade eine Schriftart (TTF/OTF) und erzeuge daraus einen Bitmap-Font.
-    </MudText>
+<div style="width:100%; height:100%; margin:0; padding:0; justify-content: center; align-items: center; display: flex;">
+    <iframe src="https://snowb.org/"
+            style="width:1400px; height:900px !important; border:none; display: block;"
+            title="Snowb"></iframe>
+</div>
 
-    <!-- Font Datei Upload -->
-    <MudPaper Class="pa-4 mb-4">
-        <MudText Typo="Typo.subtitle1">Font-Datei hochladen</MudText>
-        <InputFile OnChange="OnFontSelected" accept=".ttf,.otf" />
-    </MudPaper>
-
-    <!-- Eingaben für Glyph-Set und Größe -->
-    <MudGrid>
-        <MudItem xs="12" sm="6">
-            <MudTextField @bind-Value="_glyphs" Label="Zeichen (Glyph Set)" 
-                          Placeholder="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" 
-                          Lines="3" />
-        </MudItem>
-        <MudItem xs="12" sm="6">
-            <MudNumericField @bind-Value="_fontSize" Label="Schriftgröße" Min="8" Max="128" />
-        </MudItem>
-    </MudGrid>
-
-    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="GenerateFontAtlas" Class="mt-4">
-        Generate Font Atlas
-    </MudButton>
-
-    <!-- Atlas Preview -->
-    @if (!string.IsNullOrEmpty(_fontAtlasPreview))
-    {
-        <MudDivider Class="my-4" />
-        <MudText Typo="Typo.subtitle1">Font Atlas Vorschau</MudText>
-        <MudPaper Class="pa-2 mt-2">
-            <img src="@_fontAtlasPreview" alt="Font Atlas Preview" style="max-width:100%;" />
-        </MudPaper>
-    }
-</MudContainer>
-
-@code {
-    private string? _fontName;
-    private string _glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    private int _fontSize = 32;
-    private string? _fontAtlasPreview;
-
-    private byte[]? _fontData;
-
-    private async Task OnFontSelected(InputFileChangeEventArgs e)
-    {
-        var file = e.File;
-        using var stream = file.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024);
-        using var ms = new MemoryStream();
-        await stream.CopyToAsync(ms);
-        _fontData = ms.ToArray();
-        _fontName = file.Name;
-    }
-
-    private void GenerateFontAtlas()
-    {
-        if (_fontData is null)
-            return;
-
-        // TODO: Hier echte Font-Rendering-Logik einbauen (SkiaSharp oder JS-Interop Canvas).
-        // Aktuell nur Platzhalter: zeigt ein Dummy-PNG mit Text drauf.
-
-        var dummyPng = GenerateDummyAtlas(_glyphs, _fontSize);
-        _fontAtlasPreview = dummyPng;
-    }
-
-    // Platzhalter: Einfach nur Text in ein DataURL-Bild malen (SVG als PNG Base64)
-    private string GenerateDummyAtlas(string text, int size)
-    {
-        var svg = $@"
-<svg xmlns='http://www.w3.org/2000/svg' width='600' height='100'>
-    <rect width='100%' height='100%' fill='black'/>
-    <text x='10' y='60' font-size='{size}' fill='white' font-family='monospace'>
-        {text}
-    </text>
-</svg>";
-        var base64 = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(svg));
-        return $"data:image/svg+xml;base64,{base64}";
-    }
-}
+<MudText Class="py-5" Style="text-align: center;">
+    Using <MudLink Href="https://snowb.org/">Bitmap Font Generator Online</MudLink> by SnowB
+</MudText>
