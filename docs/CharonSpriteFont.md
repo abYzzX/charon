@@ -9,12 +9,12 @@ This format is used by the `CharonSpriteFont` class. It is a simple binary forma
 | Pos | Size | Description      |
 |-----|------|------------------|
 | 0   | 3    | CSF              |
-| 3   | 2    | Version          |
-| 5   | 2    | Font size        |
-| 7   | 2    | Font line height |
-| 9   | 8    | Texture Size     |
-| 17  | 2    | Character Count  |
-| 19  |      | Character Data   |
+| 3   | 1    | Version          |
+| 4   | 2    | Font size        |
+| 6   | 2    | Font line height |
+| 8   | 8    | Texture Size     |
+| 16  | 2    | Character Count  |
+| 18  |      | Character Data   |
 |     |      | Texture          |
 |     |      | Extended Data    |
 
