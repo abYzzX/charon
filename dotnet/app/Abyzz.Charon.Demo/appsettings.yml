@@ -9,7 +9,7 @@ Serilog:
     - WithEnvironmentUserName
     - FromLogContext
   MinimumLevel:
-    Default: Information
+    Default: Debug
     Override:
       System: Warning
       Microsoft: Information

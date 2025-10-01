@@ -9,19 +9,26 @@ public static class SpriteBatchExtensions
         var letterX = position.X;
         foreach (var character in text)
         {
-            var glyph = font.GetGlyph(character);
-            var letterPosition = new Vector2(letterX + glyph.XOffset, position.Y + glyph.YOffset);
-            batch.DrawSprite(font.Texture,
-                letterPosition,
-                color,
-                new Rectangle(glyph.X, glyph.Y, glyph.Width, glyph.Height),
-                Vector2.Zero,
-                0,
-                Vector2.One,
-                false,
-                false);
+            if (font.GetGlyph(character) is { } glyph)
+            {
+                var letterPosition = new Vector2(letterX + glyph.XOffset, position.Y + glyph.YOffset);
+                batch.DrawSprite(font.Texture,
+                    letterPosition,
+                    color,
+                    new Rectangle(glyph.X, glyph.Y, glyph.Width, glyph.Height),
+                    Vector2.Zero,
+                    0,
+                    Vector2.One,
+                    false,
+                    false);
             
-            letterX += glyph.XAdvance;
+                letterX += glyph.XAdvance;
+            }
+            else
+            {
+                letterX += font.LineHeight;
+            }
+            
         }
     }
 }
