@@ -9,6 +9,7 @@ namespace Abyzz.Charon.Demo;
 
 [DependsOn(
     typeof(CharonFontBdfModule)
+    ,typeof(CharonFontBmfModule)
     ,typeof(CharonDebugModule)
 )]
 public class CharonDemoModule : CharonModule

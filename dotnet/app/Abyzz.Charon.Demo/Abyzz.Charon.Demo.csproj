@@ -19,6 +19,7 @@
       <ProjectReference Include="..\..\src\Abyzz.Charon.Backend.Sdl3\Abyzz.Charon.Backend.Sdl3.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon.Debug\Abyzz.Charon.Debug.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon.Font.Bdf\Abyzz.Charon.Font.Bdf.csproj" />
+      <ProjectReference Include="..\..\src\Abyzz.Charon.Font.Bmf\Abyzz.Charon.Font.Bmf.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon\Abyzz.Charon.csproj" />
     </ItemGroup>
   
