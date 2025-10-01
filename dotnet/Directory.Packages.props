@@ -14,6 +14,9 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsVersion)"/>
     <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MsVersion)"/>
     <PackageVersion Include="Microsoft.Extensions.Options.Abstractions" Version="$(MsVersion)"/>
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.9"/>
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.9"/>    
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.9"/>    
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +44,7 @@
     <!-- Misc -->
     <PackageVersion Include="NetEscapades.Configuration.Yaml" Version="3.1.0"/>
     <PackageVersion Include="Nito.AsyncEx" Version="5.1.2"/>
+    <PackageVersion Include="MudBlazor" Version="8.12.0"/>
   </ItemGroup>
 </Project>
 
