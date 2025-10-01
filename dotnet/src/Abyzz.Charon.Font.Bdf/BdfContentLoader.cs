@@ -1,4 +1,4 @@
-﻿using Charon.Font.BdfReader;
+﻿using Abyzz.Bdf;
 using Charon.Modularity;
 using Charon.Modularity.Attributes;
 
@@ -11,12 +11,11 @@ public class BdfContentLoader : IContentLoader, ITransientDependency
     public string Name { get; } = "Bitmap Distribution Format";
     public IReadOnlyCollection<string> SupportedExtensions { get; } = [".bdf"];
     
-    public required BdfLoader Loader { private get; init; }
     public required BdfToSpriteFontConverter Converter { private get; init; }
     
     public object? Load(Stream stream, string filename)
     {
-        var bdf = Loader.Load(stream, filename);
+        var bdf = new BdfLoader().Load(stream, filename);
         return Converter.Convert(bdf, Charsets.PrintableAscii);
     }
 }

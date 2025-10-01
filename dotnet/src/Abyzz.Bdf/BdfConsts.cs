@@ -1,4 +1,4 @@
-﻿namespace Charon.Font.BdfReader;
+﻿namespace Abyzz.Bdf;
 
 internal static class BdfConsts
 {

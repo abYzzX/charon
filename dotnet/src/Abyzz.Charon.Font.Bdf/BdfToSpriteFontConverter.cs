@@ -1,4 +1,4 @@
-﻿using Charon.Font.BdfReader;
+﻿using Abyzz.Bdf;
 using Charon.Modularity;
 
 namespace Charon.Font;

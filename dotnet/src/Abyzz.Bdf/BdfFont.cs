@@ -1,6 +1,6 @@
-﻿using Charon.Math;
+﻿using System.Numerics;
 
-namespace Charon.Font.BdfReader;
+namespace Abyzz.Bdf;
 
 public class BdfFont
 {

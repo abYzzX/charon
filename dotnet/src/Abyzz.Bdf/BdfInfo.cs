@@ -1,4 +1,4 @@
-﻿namespace Charon.Font.BdfReader;
+﻿namespace Abyzz.Bdf;
 
 public class BdfInfo
 {
