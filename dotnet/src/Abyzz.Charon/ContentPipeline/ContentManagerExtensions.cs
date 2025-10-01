@@ -11,4 +11,11 @@ public static class ContentManagerExtensions
         return loader.Load(stream, path) as ITexture
                ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");
     }
+
+    public static ITexture LoadTexture(this IContentManager manager, string path, Stream stream)
+    {
+        var loader = manager.GetContentLoader<ITexture>(path);
+        return loader.Load(stream, path) as ITexture
+               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");   
+    }
 }

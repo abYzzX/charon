@@ -1,4 +1,5 @@
-﻿using Abyzz.Charon.Demo;
+﻿using System.IO.Compression;
+using Abyzz.Charon.Demo;
 using Charon;
 using Charon.ContentPipeline;
 using Charon.Extensions;

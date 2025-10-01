@@ -15,8 +15,9 @@ This format is used by the `CharonSpriteFont` class. It is a simple binary forma
 | 8   | 8    | Texture Size     |
 | 16  | 2    | Character Count  |
 | 18  |      | Character Data   |
-|     |      | Texture          |
 |     |      | Extended Data    |
+|     |      | Texture          |
+
 
 ### Character Data
 
