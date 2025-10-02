@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Charon.Font;
+using Charon.Input;
 using Charon.Modularity;
 using Charon.Modularity.Attributes;
 using Microsoft.Extensions.Options;
@@ -19,8 +20,11 @@ public class DebugOverlay : IDebugOverlay, IGlobalService, ISingletonDependency
     public required IOptions<DebuggingSettings> Settings { private get; init; }
     public required Func<ISpriteBatch> SpriteBatchFactory { private get; init; }
     public required Func<IContentManager> ContentManagerFactory { private get; init; }
+    public required IKeyboardInputService KeyboardInputService { private get; init; }
 
     public int Order { get; } = int.MaxValue;
+
+    public bool Visible { get; set; }
 
     public IDebugOverlay AddElement(IDebugOverlayElement element)
     {
@@ -34,6 +38,7 @@ public class DebugOverlay : IDebugOverlay, IGlobalService, ISingletonDependency
 
     public void Initialize()
     {
+        Visible = Settings.Value.Enabled;
         _spriteBatch = SpriteBatchFactory();
         var contentManager = ContentManagerFactory();
         if (string.IsNullOrWhiteSpace(Settings.Value.DefaultFont))
@@ -46,11 +51,19 @@ public class DebugOverlay : IDebugOverlay, IGlobalService, ISingletonDependency
         {
             _font = contentManager.LoadFont(Settings.Value.DefaultFont);       
         }
+
+        KeyboardInputService.KeyDown += (sender, args) =>
+        {
+            if (args.Key == Settings.Value.ToggleKey)
+            {
+                Visible = !Visible;
+            }
+        };
     }
 
     public void Update(IGameTime gameTime)
     {
-        if (!Settings.Value.Enabled)
+        if (!Visible)
         {
             return;
         }
@@ -58,8 +71,9 @@ public class DebugOverlay : IDebugOverlay, IGlobalService, ISingletonDependency
 
     public void Render()
     {
-        if (!Settings.Value.Enabled)
+        if (!Visible)
         {
+            _debugTexts.Clear();           
             return;
         }
 
