@@ -10,4 +10,9 @@
     <ProjectReference Include="..\Abyzz.Charon.Font\Abyzz.Charon.Font.csproj" />
     <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Content\6x10.bdf" />
+    <EmbeddedResource Include="Content\default_font.bdf" />
+  </ItemGroup>
 </Project>
