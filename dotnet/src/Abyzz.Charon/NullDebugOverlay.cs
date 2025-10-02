@@ -17,7 +17,7 @@ public class NullDebugOverlay : IDebugOverlay, ISingletonDependency
         return this;
     }
 
-    public IDebugOverlay AddText(string text)
+    public IDebugOverlay AddText(string text, Color? color = null)
     {
         return this;
     }

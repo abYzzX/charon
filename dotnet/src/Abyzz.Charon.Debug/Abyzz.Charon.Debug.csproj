@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Font.Bdf\Abyzz.Charon.Font.Bdf.csproj" />
     <ProjectReference Include="..\Abyzz.Charon.Font\Abyzz.Charon.Font.csproj" />
     <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
   </ItemGroup>

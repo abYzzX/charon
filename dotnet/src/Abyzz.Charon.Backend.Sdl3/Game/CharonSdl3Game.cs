@@ -26,7 +26,7 @@ internal class CharonSdl3Game : ICharonGame, IRendererAccessor, IWindowAccessor,
 
     public CharonSdl3Game(ICollection<IGlobalService> globalServices)
     {
-        _globalServices = globalServices.OrderBy(x => x.Order).ToList();
+        _globalServices = globalServices.OrderByDescending(x => x.Order).ToList();
     }
 
     public void Initialize()

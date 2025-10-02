@@ -1,4 +1,5 @@
-﻿using Charon.Modularity;
+﻿using Charon.Debugging;
+using Charon.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Charon.Services;
@@ -12,6 +13,8 @@ public class FpsCounter : IFpsCounter, IGlobalService
     public float MinFps { get; private set; } = float.MaxValue;
     public float MaxFps { get; private set; } = float.MinValue;
     public int Order { get; } = -100;
+    
+    public required IDebugOverlay DebugOverlay { private get; init; }
 
     public void Initialize()
     {
@@ -31,6 +34,8 @@ public class FpsCounter : IFpsCounter, IGlobalService
             MinFps = System.Math.Min(Fps, MinFps);
             MaxFps = System.Math.Max(Fps, MaxFps);
         }
+
+        DebugOverlay.AddText($"FPS: {Fps:0.0} ({MinFps:0.0} / {MaxFps:0.0})");
     }
 
     public void Render() { }
