@@ -43,7 +43,8 @@ public class DemoScene : IScene
     {
         using (_spriteBatch.Begin())
         {
-            _spriteBatch.DrawString(_font, $"{FpsCounter.Fps:0.00}", new Vector2(100, 100), Color.White);
+            _spriteBatch.DrawString(_font, $"FPS: {FpsCounter.Fps:0.00}", new Vector2(100, 100), Color.Random());
+            _spriteBatch.DrawString(_font, $"Uhrzeit: {DateTime.Now.ToLongTimeString()}", new Vector2(100, 130), Color.Random());
         }
     }
 
