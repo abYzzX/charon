@@ -20,6 +20,7 @@ public class CharonDemoModule : CharonModule
     {
         ConfigureContentPipeline(services);
         ConfigureSdl3();
+        ConfigureEcs();
     }
 
     private void ConfigureContentPipeline(IServiceCollection services)
@@ -37,6 +38,14 @@ public class CharonDemoModule : CharonModule
             c.TargetFps = 60;
             c.WindowWidth = 1024;
             c.WindowHeight = 768;
+        });
+    }
+
+    private void ConfigureEcs()
+    {
+        Configure<EntityManagerOptions>(c =>
+        {
+            c.MaxEntities = 1024;
         });
     }
     
