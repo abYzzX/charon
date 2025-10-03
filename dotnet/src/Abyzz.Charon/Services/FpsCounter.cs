@@ -9,9 +9,9 @@ public class FpsCounter : IFpsCounter, IGlobalService
     private int _fpsCounter;
     private float _fpsTimer;
     
-    public float Fps { get; private set; } = 0;
-    public float MinFps { get; private set; } = float.MaxValue;
-    public float MaxFps { get; private set; } = float.MinValue;
+    public float Fps { get; private set; }
+    public float MinFps { get; private set; }
+    public float MaxFps { get; private set; }
     public float FrameTime { get; private set; }
     public int Order { get; } = -100;
     
