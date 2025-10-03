@@ -22,7 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_doc_", "_doc_", "{9FA71E2A
 		..\CHANGELOG.md = ..\CHANGELOG.md
 		..\README.md = ..\README.md
 		..\LICENSE.md = ..\LICENSE.md
-		..\docs\CharonSpriteFont.md = ..\docs\CharonSpriteFont.md
 		..\docs\BMFontSpec.md = ..\docs\BMFontSpec.md
 	EndProjectSection
 EndProject
