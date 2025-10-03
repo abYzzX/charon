@@ -1,6 +1,7 @@
 ﻿using Charon;
 using Charon.ContentPipeline;
 using Charon.Debugging;
+using Charon.Ecs;
 using Charon.Font;
 using Charon.Modularity.Attributes;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,9 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Abyzz.Charon.Demo;
 
 [DependsOn(
-    typeof(CharonFontBdfModule)
-    ,typeof(CharonFontBmfModule)
-    ,typeof(CharonDebugModule)
+    typeof(CharonFontBdfModule),
+    typeof(CharonFontBmfModule),
+    typeof(CharonDebugModule),
+    typeof(CharonEcsModule)
 )]
 public class CharonDemoModule : CharonModule
 {

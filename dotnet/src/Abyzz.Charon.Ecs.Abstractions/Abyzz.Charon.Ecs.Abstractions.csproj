@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Ecs.Abstractions</PackageId>
+    <RootNamespace>Charon.Ecs</RootNamespace>
+    <ProjectGuid>424274b4-1692-49f5-ac4c-744ba3b51c89</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+  </ItemGroup>
+</Project>
