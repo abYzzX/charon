@@ -84,11 +84,11 @@ public struct Matrix2D(float m11, float m12, float m21, float m22, float m31, fl
     public static Matrix2D CreateTransform(Vector2 position, float rotation, Vector2 scale, Vector2 centerPoint)
     {
         return
-            CreateTranslation(position.X, position.Y) *
             CreateTranslation(-centerPoint.X, -centerPoint.Y) *
-            CreateRotation(rotation) *
             CreateScale(scale.X, scale.Y) *
-            CreateTranslation(centerPoint.X, centerPoint.Y);
+            CreateRotation(rotation) *
+            CreateTranslation(centerPoint.X, centerPoint.Y) *
+            CreateTranslation(position.X, position.Y);
     }
 
     public static Matrix2D operator *(Matrix2D a, Matrix2D b)

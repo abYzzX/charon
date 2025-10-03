@@ -110,7 +110,7 @@ public unsafe class SdlRenderBatch : RenderBatchBase, IScopedDependency
 
         var sdlPoints = new SDL_FPoint[points.Length + 1];
         Array.Copy(points.Select(x => x.ToFPoint()).ToArray(), sdlPoints, points.Length);
-        sdlPoints[^1] = Projection.Transform(points[0]).ToFPoint();
+        sdlPoints[^1] = points[0].ToFPoint();
 
         fixed (SDL_FPoint* pointsPtr = sdlPoints)
         {

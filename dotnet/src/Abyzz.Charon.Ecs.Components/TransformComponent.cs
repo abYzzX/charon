@@ -1,4 +1,6 @@
-﻿namespace Charon.Ecs.Components;
+﻿using Charon.Geom;
+
+namespace Charon.Ecs.Components;
 
 public struct TransformComponent
 {
