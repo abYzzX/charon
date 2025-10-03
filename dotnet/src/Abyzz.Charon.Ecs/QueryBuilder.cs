@@ -6,48 +6,36 @@ namespace Charon.Ecs;
 [ExposeServices(typeof(IQueryBuilder))]
 internal class QueryBuilder : IQueryBuilder, ITransientDependency
 {
-    private readonly List<HashSet<int>> _all = new();
-    private readonly List<HashSet<int>> _one = new();
-    private readonly List<HashSet<int>> _exclude = new();
+    private readonly List<Type> _all = new();
+    private readonly List<Type> _one = new();
+    private readonly List<Type> _exclude = new();
 
     public required IEntityManager Manager { private get; init; }
     
-    public IQueryBuilder All<T>() where T : struct
+    public IQueryBuilder All<T>() where T : struct, IComponent
     {
-        _all.Add([..Manager.GetComponentStorage<T>().Entities]);
+        _all.Add(typeof(T));
         return this;
     }
 
-    public IQueryBuilder One<T>() where T : struct
+    public IQueryBuilder One<T>() where T : struct, IComponent
     {
-        _one.Add([..Manager.GetComponentStorage<T>().Entities]);
+        _one.Add(typeof(T));
         return this;
     }
 
-    public IQueryBuilder Exclude<T>() where T : struct
+    public IQueryBuilder Exclude<T>() where T : struct, IComponent
     {
-        _exclude.Add([..Manager.GetComponentStorage<T>().Entities]);
+        _exclude.Add(typeof(T));
         return this;
     }
 
-    public IEnumerable<IEntity> Build()
+    public IEntityQuery Build()
     {
-        var result = _all.Count > 0 ? new HashSet<int>(_all[0]) : new HashSet<int>();
-
-        foreach (var set in _all.Skip(1))
-            result.IntersectWith(set);
-
-        if (_one.Count > 0)
-        {
-            var oneSet = new HashSet<int>();
-            foreach (var set in _one) oneSet.UnionWith(set);
-            result.IntersectWith(oneSet);
-        }
-
-        foreach (var set in _exclude)
-            result.ExceptWith(set);
-
-        foreach (var e in result)
-            yield return new Entity(e);
+        var query = new EntityQuery(Manager, _all, _one, _exclude);
+        _all.Clear();
+        _one.Clear();
+        _exclude.Clear();
+        return query;
     }
 }

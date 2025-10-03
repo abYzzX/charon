@@ -34,7 +34,7 @@ public class CharonDemoModule : CharonModule
         {
             c.Title = "Charon Demo";
             c.IsResizable = true;
-            c.LimitFps = false;
+            c.LimitFps = true;
             c.TargetFps = 60;
             c.WindowWidth = 1024;
             c.WindowHeight = 768;

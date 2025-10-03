@@ -1,6 +1,6 @@
 ﻿namespace Charon.Ecs;
 
-public class ComponentMapper<T> : IComponentMapper<T> where T : struct
+public class ComponentMapper<T> : IComponentMapper<T> where T : struct, IComponent
 {
     public required IEntityManager Manager { private get; init; }
 

@@ -2,8 +2,8 @@
 
 public interface IQueryBuilder
 {
-    IQueryBuilder All<T>() where T : struct;
-    IQueryBuilder One<T>() where T : struct;
-    IQueryBuilder Exclude<T>() where T : struct;
-    IEnumerable<IEntity> Build();
+    IQueryBuilder All<T>() where T : struct, IComponent;
+    IQueryBuilder One<T>() where T : struct, IComponent;
+    IQueryBuilder Exclude<T>() where T : struct, IComponent;
+    IEntityQuery Build();
 }
