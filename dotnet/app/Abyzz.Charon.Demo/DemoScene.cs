@@ -32,7 +32,7 @@ public class DemoScene : IScene
     {
         _renderBatch = RenderBatchFactory();
         _spriteBatch = SpriteBatchFactory();
-        _soundEffect = ContentManager.LoadSoundEffect("retro.mp3");
+        _soundEffect = ContentManager.LoadSoundEffect("retro.wav");
 
         KeyboardInputService.KeyDown += (sender, args) =>
         {

@@ -29,7 +29,6 @@ internal unsafe class SdlMusicPlayer : IMusicPlayer, IDisposable
         _mixer = mixer;
         _audio = audio;
 
-        // Create dedicated track for this music player
         _track = SDL3_mixer.MIX_CreateTrack(mixer.Mixer);
         if (_track == null)
         {
@@ -45,6 +44,13 @@ internal unsafe class SdlMusicPlayer : IMusicPlayer, IDisposable
 
     public void Play(int loops = -1)
     {
+        Play(loops, 1.0f);
+    }
+
+    internal void Play(int loops, float categoryVolume)
+    {
+        SDL3_mixer.MIX_SetTrackGain(_track, _volume * categoryVolume);
+
         var props = SDL3.SDL_CreateProperties();
         SDL3.SDL_SetNumberProperty(props, SDL3_mixer.MIX_PROP_PLAY_LOOPS_NUMBER, loops);
 
@@ -57,6 +63,13 @@ internal unsafe class SdlMusicPlayer : IMusicPlayer, IDisposable
 
     public void FadeIn(int fadeMs, int loops = -1)
     {
+        FadeIn(fadeMs, loops, 1.0f);
+    }
+
+    internal void FadeIn(int fadeMs, int loops, float categoryVolume)
+    {
+        SDL3_mixer.MIX_SetTrackGain(_track, _volume * categoryVolume);
+
         var props = SDL3.SDL_CreateProperties();
         SDL3.SDL_SetNumberProperty(props, SDL3_mixer.MIX_PROP_PLAY_LOOPS_NUMBER, loops);
         SDL3.SDL_SetNumberProperty(props, SDL3_mixer.MIX_PROP_PLAY_FADE_IN_MILLISECONDS_NUMBER, fadeMs);

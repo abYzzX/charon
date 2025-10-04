@@ -1,14 +1,10 @@
 ﻿using System.Runtime.InteropServices;
-using Microsoft.Extensions.Logging;
 using SDL;
 
 namespace Charon.Audio;
 
-internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
+internal unsafe class SdlSoundEffect(Sdl3Mixer mixer, MIX_Audio* audio) : ISoundEffect, IDisposable
 {
-    private readonly MIX_Audio* _audio;
-    private readonly Sdl3Mixer _mixer;
-
     private MIX_Track* _currentTrack;
     private float _volume = 1.0f;
     private Vector2 _position;
@@ -40,15 +36,14 @@ internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
         }
     }
 
-    public SdlSoundEffect(Sdl3Mixer mixer, MIX_Audio* audio)
-    {
-        _mixer = mixer;
-        _audio = audio;
-    }
-
     public void Play(int loops = 1)
     {
-        if (!_mixer.AcquireTrack(out var track))
+        Play(loops, 1.0f);
+    }
+
+    internal void Play(int loops, float categoryVolume)
+    {
+        if (!mixer.AcquireTrack(out var track))
         {
             return;
         }
@@ -56,8 +51,8 @@ internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
         _currentTrack = track;
 
         // Set track properties
-        SDL3_mixer.MIX_SetTrackAudio(track, _audio);
-        SDL3_mixer.MIX_SetTrackGain(track, _volume);
+        SDL3_mixer.MIX_SetTrackAudio(track, audio);
+        SDL3_mixer.MIX_SetTrackGain(track, _volume * categoryVolume);
 
         var pos = new MIX_Point3D { x = _position.X, y = 0, z = _position.Y };
         SDL3_mixer.MIX_SetTrack3DPosition(track, &pos);
@@ -70,7 +65,7 @@ internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
         SDL3.SDL_DestroyProperties(props);
 
         // Set callback to release track when done
-        var context = new TrackContext { Mixer = _mixer, Track = track };
+        var context = new TrackContext { Mixer = mixer, Track = track };
         var contextHandle = GCHandle.Alloc(context);
         SDL3_mixer.MIX_SetTrackStoppedCallback(track, &OnTrackFinished, GCHandle.ToIntPtr(contextHandle));
     }
@@ -101,7 +96,7 @@ internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
         if (_currentTrack != null)
         {
             SDL3_mixer.MIX_StopTrack(_currentTrack, 0);
-            _mixer.ReleaseTrack(_currentTrack);
+            mixer.ReleaseTrack(_currentTrack);
             _currentTrack = null;
         }
     }
@@ -125,6 +120,6 @@ internal unsafe class SdlSoundEffect : ISoundEffect, IDisposable
     public void Dispose()
     {
         Stop();
-        SDL3_mixer.MIX_DestroyAudio(_audio);
+        SDL3_mixer.MIX_DestroyAudio(audio);
     }
 }

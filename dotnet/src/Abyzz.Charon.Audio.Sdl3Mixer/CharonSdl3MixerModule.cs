@@ -6,8 +6,4 @@ namespace Charon.Audio;
 
 public class CharonSdl3MixerModule : CharonModuleBase
 {
-    public override void ConfigureServices(IServiceCollection services)
-    {
-        services.AddSingleton<Sdl3Mixer>();
-    }
 }
