@@ -16,6 +16,7 @@
   </ItemGroup>
   
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Abyzz.Charon.Audio.Sdl3Mixer\Abyzz.Charon.Audio.Sdl3Mixer.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon.Backend.Sdl3\Abyzz.Charon.Backend.Sdl3.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon.Debug\Abyzz.Charon.Debug.csproj" />
       <ProjectReference Include="..\..\src\Abyzz.Charon.Ecs\Abyzz.Charon.Ecs.csproj" />
@@ -32,6 +33,12 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="content\image_font.cfnt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="content\retro.wav">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="content\retro.mp3">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

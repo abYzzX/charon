@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Audio.Sdl3Mixer</PackageId>
+    <RootNamespace>Charon.Audio</RootNamespace>
+    <ProjectGuid>6e03f22e-5690-4579-8806-10f845d6c316</ProjectGuid>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ppy.SDL3_mixer-CS" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Abyzz.Charon.Audio\Abyzz.Charon.Audio.csproj" />
+    <ProjectReference Include="..\Abyzz.Charon.Modularity\Abyzz.Charon.Modularity.csproj" />
+  </ItemGroup>
+
+</Project>
