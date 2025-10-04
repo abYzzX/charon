@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using Charon.Modularity;
 using Charon.Modularity.Attributes;
 using Microsoft.Extensions.Logging;
@@ -7,13 +7,13 @@ using SDL;
 namespace Charon.Audio;
 
 [ExposeServices(typeof(IContentLoader))]
-internal class SdlAudioContentLoader : IContentLoader, ITransientDependency
+internal class SdlMusicContentLoader : IContentLoader, ITransientDependency
 {
-    public Type ContentType { get; } = typeof(ISoundEffect);
-    public string Name { get; } = "SDL Audio loader";
+    public Type ContentType { get; } = typeof(IMusicPlayer);
+    public string Name { get; } = "SDL Music loader";
     public IReadOnlyCollection<string> SupportedExtensions { get; } = [".wav", ".ogg", ".mp3", ".flac", ".mod"];
 
-    public required ILogger<SdlAudioContentLoader> Logger { private get; init; }
+    public required ILogger<SdlMusicContentLoader> Logger { private get; init; }
     public required Sdl3Mixer Mixer { private get; init; }
 
     public unsafe object? Load(Stream stream, string filename)
@@ -41,7 +41,7 @@ internal class SdlAudioContentLoader : IContentLoader, ITransientDependency
                 throw ex;
             }
 
-            return new SdlSoundEffect(Mixer, audio);
+            return new SdlMusicPlayer(Mixer, audio);
         }
         finally
         {

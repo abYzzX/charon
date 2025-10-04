@@ -9,13 +9,28 @@ public static class ContentManagerAudioExtensions
         var loader = manager.GetContentLoader<ISoundEffect>(path);
         using var stream = manager.LoadStream(path);
         return loader.Load(stream, path) as ISoundEffect
-               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");   
+               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");
     }
 
     public static ISoundEffect LoadSoundEffect(this IContentManager manager, string path, Stream stream)
     {
         var loader = manager.GetContentLoader<ISoundEffect>(path);
         return loader.Load(stream, path) as ISoundEffect
-               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");   
+               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");
+    }
+
+    public static IMusicPlayer LoadMusic(this IContentManager manager, string path)
+    {
+        var loader = manager.GetContentLoader<IMusicPlayer>(path);
+        using var stream = manager.LoadStream(path);
+        return loader.Load(stream, path) as IMusicPlayer
+               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");
+    }
+
+    public static IMusicPlayer LoadMusic(this IContentManager manager, string path, Stream stream)
+    {
+        var loader = manager.GetContentLoader<IMusicPlayer>(path);
+        return loader.Load(stream, path) as IMusicPlayer
+               ?? throw new CharonContentException($"Loader returned null: {loader.GetType().FullName}");
     }
 }
