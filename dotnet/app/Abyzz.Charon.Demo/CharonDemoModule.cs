@@ -1,4 +1,5 @@
 ﻿using Charon;
+using Charon.Audio;
 using Charon.ContentPipeline;
 using Charon.Debugging;
 using Charon.Ecs;
@@ -12,7 +13,8 @@ namespace Abyzz.Charon.Demo;
     typeof(CharonFontBdfModule),
     typeof(CharonFontBmfModule),
     typeof(CharonDebugModule),
-    typeof(CharonEcsModule)
+    typeof(CharonEcsModule),
+    typeof(CharonSdl3MixerModule)
 )]
 public class CharonDemoModule : CharonModule
 {

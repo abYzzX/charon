@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Abyzz.Charon.Audio</PackageId>
+    <RootNamespace>Charon.Audio</RootNamespace>
+    <ProjectGuid>6e9329a7-4179-4d06-b9e1-fc9777ec21a6</ProjectGuid>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Abyzz.Charon.Shared\Abyzz.Charon.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
