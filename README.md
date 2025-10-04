@@ -301,8 +301,8 @@ public class MyService : IMyService, ISingletonDependency
 - [ ] **Abyzz.Charon.Physics.Simple**: Simple AABB/circle collision for prototyping
 
 ### Audio
-- [ ] **Abyzz.Charon.Audio**: Audio abstraction layer
-- [ ] **Abyzz.Charon.Audio.Sdl3Mixer**: SDL3_mixer backend
+- [x] **Abyzz.Charon.Audio**: Audio abstraction layer
+- [x] **Abyzz.Charon.Audio.Sdl3Mixer**: SDL3_mixer backend
 - [ ] **Abyzz.Charon.Audio.OpenAL**: OpenAL backend for 3D spatial audio
 
 ### Rendering
@@ -321,12 +321,6 @@ public class MyService : IMyService, ISingletonDependency
 - [ ] **Tilemap Support**: Tiled map editor integration
 - [ ] **Spritesheet Packer**: Automatic texture atlas generation
 - [ ] **Level Editor**: In-engine level editing tools
-- [ ] **ImGui Integration**: Immediate-mode GUI for tools and debugging
-
-### Platforms
-- [ ] **Mobile**: iOS and Android support
-- [ ] **Web**: WebAssembly/Blazor experimental support
-- [ ] **Console**: Nintendo Switch, Xbox, PlayStation (via certified SDKs)
 
 ## 🛠️ Requirements
 
@@ -336,11 +330,11 @@ public class MyService : IMyService, ISingletonDependency
 
 ## 💻 Supported Platforms
 
-| Platform | x64 | ARM64 |
-|----------|-----|-------|
-| Windows 10/11 | ✅ | ✅ |
-| Linux | ✅ | ✅ |
-| macOS | ✅ | ✅ |
+| Platform      | x64 |
+|---------------|-----|
+| Windows 10/11 | ✅   |
+| Linux         | ✅   |
+| macOS         | ✅   |
 
 ## 🤝 Contributing
 
